@@ -26,6 +26,7 @@ public class Sol {
         }
         sc.close();
         printTarget(targetList);
+        startWrite(targetList);
     }
 
     //Írjon függvényt, ami kiírja a lista elemeit
@@ -33,5 +34,14 @@ public class Sol {
         for (int i = 0; i < targetList.size(); i++) {
             System.out.println(targetList.get(i));
         }
+    }
+
+    public void startWrite(List<String> targetList) {
+        StringBuilder stringBuilder = new StringBuilder();
+        for(String target: targetList) {
+            stringBuilder.append(target);
+            stringBuilder.append("\n");
+        }
+        Storage.writeToFile(stringBuilder.toString());
     }
 }
